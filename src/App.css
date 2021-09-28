@@ -48,3 +48,15 @@
   padding: 20px;
   justify-content: center;
 }
+
+.remove-btn {
+  background-color: red;
+  color: black;
+  margin-right: 0;
+  size: 5px;
+  float: right;
+}
+
+.like-btn {
+  background-color: green;
+}

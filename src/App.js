@@ -51,9 +51,14 @@ const App = () => {
   };
 
   const showDetails = (movie) => {
-    const detailsList = [movie];
-    setDetails(detailsList);
-  }
+    const newDetailsList = [...details, movie];
+    setDetails(newDetailsList);
+  };
+
+  const removeDetails = (movie) => {
+    const newDetailsList = details.filter((details) => details.episode_id !== movie.episode_id);
+    setDetails(newDetailsList);
+  };
 
 
   
@@ -81,7 +86,7 @@ const App = () => {
         <MovieListHeading heading="Movie Details"/>
       </div>
       <div className="col">
-      <MovieDetails movies = {details} handleFavouritesClick={addFavouriteMovie} favouriteComponent= {AddFavourites} />
+      <MovieDetails movies = {details}  handleRemoveDetailsClick={removeDetails} handleFavouritesClick={addFavouriteMovie} favouriteComponent= {AddFavourites} />
       </div>       
      
     </div>

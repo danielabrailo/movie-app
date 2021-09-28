@@ -13,14 +13,14 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
   const [details, setDetails] = useState([]);
-  const [isPending, setIsPending] = useState(true)
+  const [isPending, setIsPending] = useState(true) //When content is loading
 
   const getMovieRequest = async () => {
     const url = "https://swapi.dev/api/films"
     const response = await fetch(url);
     const responseJson = await response.json();
     setMovies(responseJson.results);
-    setIsPending(false);
+    setIsPending(false); //Content already loaded
   };
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const App = () => {
     
   }, []);
 
+  //Saving to local storage so the site will remember user´s favourites
   const saveToLocalStorage = (items) => {
     localStorage.setItem("react-movie-app-favourites", JSON.stringify(items))
   };
@@ -55,11 +56,11 @@ const App = () => {
 
   const showDetails = (movie) => {
     const newDetailsList = [...details, movie];
-    setDetails(newDetailsList);
+    setDetails(newDetailsList);    
   };
 
   const removeDetails = (movie) => {
-    const newDetailsList = details.filter((details) => details.episode_id !== movie.episode_id);
+    const newDetailsList = details.filter((details) => details.title !== movie.title);
     setDetails(newDetailsList);
   };
 

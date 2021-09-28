@@ -1,6 +1,13 @@
 * {
   background: #141414;
   color: #ffffff;
+  padding: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
 }
 
 .movie-app .col {
@@ -15,7 +22,6 @@
 
 .name-container:hover {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .name-container:hover .overlay {
@@ -26,10 +32,12 @@
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
   width: 100%;
+  height: 100%;
   transition: 0.5 ease;
   opacity: 0;
   bottom: 0;
-  font-size: 20px;
+  font-size: 1rem;
   padding: 20px;
   text-align: center;
+  justify-content: center;
 }

@@ -39,8 +39,9 @@ const App = () => {
   };
 
   const addFavouriteMovie = (movie) => {
-    const newFavouriteList = [...favourites, movie];
-    setFavourites(newFavouriteList);
+    const newFavouriteList = [...favourites, movie]
+    !favourites.includes(movie) &&     
+    setFavourites(newFavouriteList)
     saveToLocalStorage(newFavouriteList);
   };
 

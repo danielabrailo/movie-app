@@ -1,13 +1,21 @@
 * {
-  background: #141414;
   color: #ffffff;
   padding: auto;
+  margin: 0;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem;
+  grid-template-columns: 1fr 2fr;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 35%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    url("./components/img.jpg") no-repeat center;
+  background-size: cover;
+  padding: 0;
 }
 
 .movie-app .col {

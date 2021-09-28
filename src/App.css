@@ -23,6 +23,21 @@
   flex-wrap: nowrap;
 }
 
+.heading {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(236, 236, 32),
+    rgb(119, 186, 224) 100%
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
 .name-container {
   position: relative;
   transition: transform 0.2s;

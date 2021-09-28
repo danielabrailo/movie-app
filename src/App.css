@@ -29,8 +29,9 @@
   text-align: center;
   background-image: linear-gradient(
     to right,
-    rgb(236, 236, 32),
-    rgb(119, 186, 224) 100%
+    rgb(238, 97, 62),
+    rgb(101, 240, 108),
+    rgb(101, 177, 240) 100%
   );
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -74,4 +75,12 @@
 
 .like-btn {
   background-color: green;
+}
+
+.pending {
+  size: 3rem;
+  color: red;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

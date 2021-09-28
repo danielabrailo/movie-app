@@ -13,12 +13,14 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
   const [details, setDetails] = useState([]);
+  const [isPending, setIsPending] = useState(true)
 
   const getMovieRequest = async () => {
     const url = "https://swapi.dev/api/films"
     const response = await fetch(url);
     const responseJson = await response.json();
-    setMovies(responseJson.results)
+    setMovies(responseJson.results);
+    setIsPending(false);
   };
 
   useEffect(() => {
@@ -66,10 +68,11 @@ const App = () => {
   return (
     <div className="container">
 
-    <div className= "container-fluid movie-app">
+    <div className= "container-fluid movie-app">      
       <div className="row d-flex align-items-center mt-4 mb-4">
         <MovieListHeading heading="Star Wars Movies"/>
       </div>
+      {isPending && <div><h2  className="pending">Loading...</h2></div>}
       <div className="col">
       <MovieTitleList movies = {movies} handleDetailsClick={showDetails} textComponent={ShowDetails}/>
       </div>    

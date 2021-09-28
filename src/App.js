@@ -7,12 +7,12 @@ import AddFavourites from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
 import MovieDetails from "./components/MovieDetails";
 import MovieTitleList from "./components/MovieTitleList";
-import showDetails from "./components/ShowDetails";
 import ShowDetails from "./components/ShowDetails";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState([]);
+  const [details, setDetails] = useState([]);
 
   const getMovieRequest = async () => {
     const url = "https://swapi.dev/api/films"
@@ -50,6 +50,11 @@ const App = () => {
     saveToLocalStorage(newFavouriteList);
   };
 
+  const showDetails = (movie) => {
+    const detailsList = [movie];
+    setDetails(detailsList);
+  }
+
 
   
   return (
@@ -76,7 +81,7 @@ const App = () => {
         <MovieListHeading heading="Movie Details"/>
       </div>
       <div className="col">
-      <MovieDetails movies = {movies} handleFavouritesClick={addFavouriteMovie} favouriteComponent= {AddFavourites} />
+      <MovieDetails movies = {details} handleFavouritesClick={addFavouriteMovie} favouriteComponent= {AddFavourites} />
       </div>       
      
     </div>

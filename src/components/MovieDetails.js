@@ -6,7 +6,7 @@ const MovieDetails = (props) => {
     return (
         <>
         {props.movies.map((movie, index) => (
-            <div className="name-container d-flex flex-column justify-content-center mb-3">
+            <div className="d-flex flex-column justify-content-center mb-3">
                 <h2>{movie.title}</h2>
 
                 <span><button class="remove-btn" onClick={() => props.handleRemoveDetailsClick(movie)}> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="black" class="bi bi-x-square" viewBox="0 0 16 16">

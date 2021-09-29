@@ -56,6 +56,7 @@ const App = () => {
 
   const showDetails = (movie) => {
     const newDetailsList = [...details, movie];
+    !details.includes(movie) &&
     setDetails(newDetailsList);    
   };
 

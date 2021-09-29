@@ -1,6 +1,7 @@
 import "./App.css";
 import React, {useState, useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import * as ReactBootstrap from "react-bootstrap";
 import MovieList from "./components/MovieList";
 import MovieListHeading from "./components/MovieListHeading";
 import AddFavourites from "./components/AddFavourites";
@@ -43,7 +44,7 @@ const App = () => {
 
   const addFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie]
-    !favourites.includes(movie) &&     
+    !favourites.includes(movie) &&    // to avoid duplicates  
     setFavourites(newFavouriteList)
     saveToLocalStorage(newFavouriteList);
   };
@@ -56,7 +57,7 @@ const App = () => {
 
   const showDetails = (movie) => {
     const newDetailsList = [...details, movie];
-    !details.includes(movie) &&
+    !details.includes(movie) && // to avoid duplicates
     setDetails(newDetailsList);    
   };
 
@@ -74,7 +75,7 @@ const App = () => {
       <div className="row d-flex align-items-center mt-4 mb-4">
         <MovieListHeading heading="Star Wars Movies"/>
       </div>
-      {isPending && <div><h2  className="pending">Loading...</h2></div>}
+      {isPending && <div><h2  className="pending">Loading...<ReactBootstrap.Spinner animation="border" variant="danger" /></h2></div>}
       <div className="col">
       <MovieTitleList movies = {movies} handleDetailsClick={showDetails} textComponent={ShowDetails}/>
       </div>    
